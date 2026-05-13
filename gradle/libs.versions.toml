@@ -1,0 +1,43 @@
+[metadata]
+version = "1.0"
+
+[versions]
+checkstyle = "12.3.1"
+errorprone = "2.49.0"
+indra = "4.0.0"
+junit = "6.0.3"
+
+[libraries]
+# shared
+adventure-bom = { module = "net.kyori:adventure-bom", version = "5.1.1" }
+adventure-nbt = { module = "net.kyori:adventure-nbt" }
+
+# dfu
+dfu = { module = "com.mojang:datafixerupper", version = "10.0.21" }
+
+# tests
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
+junit-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params" }
+
+# Build process/APs
+# https://github.com/zml2008/contract-validator
+contractValidator = "ca.stellardrift:contract-validator:1.0.1"
+errorprone = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone" }
+stylecheck = "ca.stellardrift:stylecheck:0.2.1"
+
+build-errorpronePlugin = { module = "net.ltgt.gradle:gradle-errorprone-plugin", version = "5.0.0" }
+build-indra = { module = "net.kyori:indra-common", version.ref = "indra" }
+build-indra-sonatype = { module = "net.kyori:indra-publishing-sonatype", version.ref = "indra" }
+build-indra-spotless = { module = "net.kyori:indra-licenser-spotless", version.ref = "indra" }
+build-goomph = "com.diffplug.gradle:goomph:4.4.1"
+build-testLogger = "com.adarshr:gradle-test-logger-plugin:4.0.0"
+
+# unused, for renovate
+zCheckstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "checkstyle" }
+
+[plugins]
+indra-sonatype = { id = "net.kyori.indra.publishing.sonatype", version.ref = "indra" }
+nexusPublish = { id = "io.github.gradle-nexus.publish-plugin", version = "2.0.0" }

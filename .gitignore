@@ -1,0 +1,16 @@
+/.gradle/
+/build-logic/.gradle/
+/build/
+/*/build/
+/*/out/
+/*/bin/
+/*/run/
+/.idea/
+/*.iml
+/*/.factorypath
+/*/.settings/
+/*/.classpath
+/*/.apt_generated/
+/*/.apt_generated_tests/
+/.kotlin/
+/*/.kotlin/

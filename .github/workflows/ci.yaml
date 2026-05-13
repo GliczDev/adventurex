@@ -1,0 +1,31 @@
+name: "build"
+
+on:
+  push:
+    branches: "**"
+    tags-ignore: ["**"]
+  pull_request:
+  release:
+    types: [released]
+
+permissions:
+  actions: "write"
+  contents: "write"
+  id-token: "write"
+
+jobs:
+  call-build:
+    uses: "KyoriPowered/ci-cookbook/.github/workflows/java-ci.yaml@f3b9a3fbb31e9f4320d855e7be17b028522e87be" # 2026.02.07
+    with:
+      # todo: needs to be adjusted to only publish specific modules when a release is made for that module
+      # todo: each module will have a different version, so releases might be made at different times and on a per-module basis
+      publish_releases: true
+      publish_release_javadoc: false
+      runtime_version: 25
+    secrets:
+      # todo: these should be using paper secrets instead
+      publishing_env_vars: |
+          ORG_GRADLE_PROJECT_sonatypeUsername="${{ secrets.ADVENTURE_SONATYPE_USERNAME }}"
+          ORG_GRADLE_PROJECT_sonatypePassword="${{ secrets.ADVENTURE_SONATYPE_PASSWORD }}"
+          ORG_GRADLE_PROJECT_papermcSigningKey="${{ secrets.ADVENTURE_GPG_KEY }}"
+          ORG_GRADLE_PROJECT_papermcSigningPassword="${{ secrets.ADVENTURE_GPG_PASSWORD }}"
