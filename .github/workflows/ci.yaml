@@ -22,9 +22,8 @@ jobs:
       publish_modules_individually: true
       runtime_version: 25
     secrets:
-      # todo: these should be using paper secrets instead
       publishing_env_vars: |
-          ORG_GRADLE_PROJECT_sonatypeUsername="${{ secrets.ADVENTURE_SONATYPE_USERNAME }}"
-          ORG_GRADLE_PROJECT_sonatypePassword="${{ secrets.ADVENTURE_SONATYPE_PASSWORD }}"
-          ORG_GRADLE_PROJECT_papermcSigningKey="${{ secrets.ADVENTURE_GPG_KEY }}"
-          ORG_GRADLE_PROJECT_papermcSigningPassword="${{ secrets.ADVENTURE_GPG_PASSWORD }}"
+        ORG_GRADLE_PROJECT_sonatypeUsername="${{ secrets.PAPERMC_SONATYPE_USERNAME }}"
+        ORG_GRADLE_PROJECT_sonatypePassword="${{ secrets.PAPERMC_SONATYPE_PASSWORD }}"
+        ORG_GRADLE_PROJECT_papermcSigningKey="${{ secrets.PAPERMC_GPG_KEY }}"
+        ORG_GRADLE_PROJECT_papermcSigningPassword="${{ secrets.PAPERMC_GPG_PASSWORD }}"
