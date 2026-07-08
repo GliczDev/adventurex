@@ -92,5 +92,5 @@ tasks.register("shouldDoRelease") {
 }
 
 indra {
-  signWithKeyFromPrefixedProperties("papermc")
+  //signWithKeyFromPrefixedProperties("papermc")
 }

@@ -20,5 +20,5 @@ indra {
   }
   mitLicense()
 
-  signWithKeyFromPrefixedProperties("papermc")
+  //signWithKeyFromPrefixedProperties("papermc")
 }
